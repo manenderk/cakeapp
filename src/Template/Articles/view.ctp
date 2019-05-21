@@ -45,31 +45,5 @@
         <h4><?= __('Body') ?></h4>
         <?= $this->Text->autoParagraph(h($article->body)); ?>
     </div>
-    <div class="related">
-        <h4><?= __('Related Article Tags') ?></h4>
-        <?php if (!empty($article->article_tags)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Article Id') ?></th>
-                <th scope="col"><?= __('Tag Id') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($article->article_tags as $articleTags): ?>
-            <tr>
-                <td><?= h($articleTags->article_id) ?></td>
-                <td><?= h($articleTags->tag_id) ?></td>
-                <td><?= h($articleTags->created) ?></td>
-                <td><?= h($articleTags->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'ArticleTags', 'action' => 'view', $articleTags->]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'ArticleTags', 'action' => 'edit', $articleTags->]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'ArticleTags', 'action' => 'delete', $articleTags->], ['confirm' => __('Are you sure you want to delete # {0}?', $articleTags->)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
+    
 </div>

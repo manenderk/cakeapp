@@ -201,3 +201,6 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+//Add custom encrypted type
+Type::map('crypted', 'App\Database\Type\CryptedType');

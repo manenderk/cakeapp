@@ -40,6 +40,9 @@ class ArticlesController extends AppController
             'contain' => ['Users', 'ArticleTags']
         ]);
 
+        var_dump($article);
+        exit;
+        
         $this->set('article', $article);
     }
 

@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Database\Schema\TableSchema;
 
 /**
  * Articles Model
@@ -88,5 +89,12 @@ class ArticlesTable extends Table
         $rules->add($rules->existsIn(['user_id'], 'Users'));
 
         return $rules;
+    }
+
+    protected function _initializeSchema(TableSchema $schema)
+    {
+        $schema->columnType('title', 'crypted');
+        $schema->columnType('body', 'crypted');
+        return $schema;
     }
 }
