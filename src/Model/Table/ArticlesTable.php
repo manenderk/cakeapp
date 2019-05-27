@@ -93,8 +93,9 @@ class ArticlesTable extends Table
 
     protected function _initializeSchema(TableSchema $schema)
     {
-        $schema->columnType('title', 'crypted');
-        $schema->columnType('body', 'crypted');
+        //$schema->columnType('title', 'crypted');
+        $schema->getColumnType('title', 'crypted');
+        $schema->getColumnType('body', 'crypted');
         return $schema;
     }
 }
